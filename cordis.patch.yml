@@ -1,5 +1,5 @@
-# dsh-peer-messaging bundle patch：插入跨会话投递的 Host 行。
+# dsh-peer-message bundle patch：插入跨会话投递的 Host 行。
 # 安装后所有会话都会多出 peer_list / peer_send 两个工具。
 - insert:
     - id: peer-messaging
-      name: dsh-peer-messaging
+      name: dsh-peer-message

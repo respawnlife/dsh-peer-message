@@ -1,5 +1,5 @@
 {
-  "name": "dsh-peer-messaging",
+  "name": "dsh-peer-message",
   "version": "0.1.0",
   "description": "Cross-session messaging for DSH: deliver a message into another conversation and wake it up (peer_list / peer_send).",
   "type": "module",

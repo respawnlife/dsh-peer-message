@@ -1,6 +1,6 @@
 English | [简体中文](README.zh.md)
 
-# dsh-peer-messaging
+# dsh-peer-message
 
 Cross-session message delivery for DSH (DeepSeek Harness): lets one conversation (A) deliver a message to another conversation (B) inside the same DSH process, and wake B up.
 
@@ -41,7 +41,7 @@ Prerequisites:
 Installation (choose either route, depending on what your DSH version supports):
 
 1. **Install this directory with the plugin manager**: `plugin_manager`'s `install_bundle`, with `target` set to the absolute path of this directory. This is the normal installation route for a Host-only bundle.
-2. **Link it for local development**: add `"dsh-peer-messaging": "link:/path/to/dsh-peer-message"` to `dependencies` in the profile's `package.json`, add `dsh-peer-messaging` to `dsh.profile.bundles`, then let the plugin manager complete the installation (do not hand-write the profile's patch file).
+2. **Link it for local development**: add `"dsh-peer-message": "link:/path/to/dsh-peer-message"` to `dependencies` in the profile's `package.json`, add `dsh-peer-message` to `dsh.profile.bundles`, then let the plugin manager complete the installation (do not hand-write the profile's patch file).
 
 After installation, **every conversation** in that profile gains the two tools `peer_list` / `peer_send`, and they are kept across restarts.
 

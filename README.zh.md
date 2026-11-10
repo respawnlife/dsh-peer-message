@@ -1,6 +1,6 @@
 [English](README.md) | 简体中文
 
-# dsh-peer-messaging
+# dsh-peer-message
 
 DSH（DeepSeek Harness）跨会话消息投递：让一个会话（A）把消息投递给同一个 DSH 进程里的另一个会话（B），并把 B 叫醒。
 
@@ -41,7 +41,7 @@ DSH（DeepSeek Harness）跨会话消息投递：让一个会话（A）把消息
 安装方式（二选一，按你的 DSH 版本可用性选择）：
 
 1. **用插件管理器安装本目录**：`plugin_manager` 的 `install_bundle`，`target` 传本目录的绝对路径。这是 Host-only bundle 的常规安装方式。
-2. **本地开发链接**：在 profile 的 `package.json` 的 `dependencies` 里加 `"dsh-peer-messaging": "link:/path/to/dsh-peer-message"`，在 `dsh.profile.bundles` 里加 `dsh-peer-messaging`，然后由插件管理器完成安装（不要手写 profile 的 patch 文件）。
+2. **本地开发链接**：在 profile 的 `package.json` 的 `dependencies` 里加 `"dsh-peer-message": "link:/path/to/dsh-peer-message"`，在 `dsh.profile.bundles` 里加 `dsh-peer-message`，然后由插件管理器完成安装（不要手写 profile 的 patch 文件）。
 
 安装后该 profile 下**所有会话**都会多出 `peer_list` / `peer_send` 两个工具，重启后仍然保留。
 

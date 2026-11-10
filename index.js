@@ -1,4 +1,4 @@
-// dsh-peer-messaging Host 一半：让一个 DSH 会话给另一个会话投递消息并叫醒它。
+// dsh-peer-message Host 一半：让一个 DSH 会话给另一个会话投递消息并叫醒它。
 //
 // 原理：DSH 进程内有一个 agents 服务（同一 app 实例共享）。按会话 id 拿到 agent
 // 本体后调 followup()（空闲会话 → 开新回合）或 steer()（运行中 → 下一 step 插话），
@@ -11,7 +11,7 @@
 // 声明了实测通过的版本范围，宿主升级后需要重新验证。
 import crypto from 'node:crypto';
 
-export const name = 'dsh-peer-messaging';
+export const name = 'dsh-peer-message';
 
 const LIST_TOOL = 'peer_list';
 const SEND_TOOL = 'peer_send';
