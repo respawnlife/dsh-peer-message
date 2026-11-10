@@ -23,3 +23,6 @@ Thumbs.db
 coverage/
 *.tgz
 dist/
+
+# npm 凭据（本地发布用，绝不入库）
+.npmrc

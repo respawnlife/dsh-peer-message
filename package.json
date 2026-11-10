@@ -41,6 +41,10 @@
     "node": ">=22",
     "dsh": ">=0.2.2-rc.1 <0.3.0-0"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
