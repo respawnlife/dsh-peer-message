@@ -1,0 +1,70 @@
+name: Publish to npm
+
+# 手动触发：Actions 页面 → 本 workflow → Run workflow
+# 认证方式：npm Trusted Publishing（GitHub OIDC），不用 token、不用 OTP。
+# 前置：在 npm 包设置里为本仓库配置 Trusted Publisher（见 README / 仓库说明）。
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Dry run — 只做校验和打包，不真正发布"
+        type: boolean
+        default: true
+
+permissions:
+  id-token: write # OIDC：npm trusted publishing 必需
+  contents: read
+
+concurrency:
+  group: npm-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Ensure npm >= 11.5.1 (trusted publishing)
+        run: |
+          npm install -g npm@latest
+          node -v
+          npm -v
+
+      - name: Syntax check
+        run: node --check index.js
+
+      - name: Tests
+        run: node test/harness.mjs
+
+      - name: Package contents
+        run: npm pack --dry-run
+
+      - name: Read package identity
+        id: pkg
+        run: |
+          echo "name=$(node -p "require('./package.json').name")" >> "$GITHUB_OUTPUT"
+          echo "version=$(node -p "require('./package.json').version")" >> "$GITHUB_OUTPUT"
+
+      - name: Fail if this version is already published
+        run: |
+          if npm view "${{ steps.pkg.outputs.name }}@${{ steps.pkg.outputs.version }}" version \
+              --registry=https://registry.npmjs.org >/dev/null 2>&1; then
+            echo "::error::Version ${{ steps.pkg.outputs.version }} of ${{ steps.pkg.outputs.name }} is already published. Bump the version in package.json first."
+            exit 1
+          fi
+          echo "Version ${{ steps.pkg.outputs.version }} is not published yet — safe to publish."
+
+      - name: Publish to npm (OIDC)
+        if: ${{ !inputs.dry_run }}
+        run: npm publish --access public --provenance
+
+      - name: Summary
+        if: ${{ !inputs.dry_run }}
+        run: echo "✅ Published ${{ steps.pkg.outputs.name }}@${{ steps.pkg.outputs.version }}"
