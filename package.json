@@ -1,0 +1,48 @@
+{
+  "name": "dsh-peer-messaging",
+  "version": "0.1.0",
+  "description": "DSH 跨会话消息投递：给另一个会话发消息并把它叫醒（peer_list / peer_send）。",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis",
+    "peer",
+    "messaging",
+    "cross-session",
+    "agent-tools"
+  ],
+  "author": "respawnlife",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/respawnlife/dsh-peer-message.git"
+  },
+  "homepage": "https://github.com/respawnlife/dsh-peer-message#readme",
+  "bugs": {
+    "url": "https://github.com/respawnlife/dsh-peer-message/issues"
+  },
+  "engines": {
+    "node": ">=22",
+    "dsh": ">=0.2.2-rc.1 <0.3.0-0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}

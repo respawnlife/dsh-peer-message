@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Peer messaging">
+  <title>Peer messaging</title>
+  <defs>
+    <linearGradient id="pm-bg" x1="6" y1="4" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6C5CE7"/>
+      <stop offset="1" stop-color="#00A8E8"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#pm-bg)"/>
+  <path d="M15 16h14a6 6 0 0 1 6 6v6a6 6 0 0 1-6 6h-5l-6 4.5V34h-3a6 6 0 0 1-6-6v-6a6 6 0 0 1 6-6Z" fill="#FFFFFF" opacity="0.97"/>
+  <path d="M37 28h12a6 6 0 0 1 6 6v6a6 6 0 0 1-6 6h-2v4.5L41 46h-4a6 6 0 0 1-6-6v-6a6 6 0 0 1 6-6Z" fill="#FFFFFF" opacity="0.97"/>
+  <circle cx="18" cy="25" r="2.2" fill="#6C5CE7"/>
+  <circle cx="24" cy="25" r="2.2" fill="#6C5CE7"/>
+  <circle cx="30" cy="25" r="2.2" fill="#6C5CE7"/>
+  <circle cx="41" cy="37" r="2.2" fill="#00A8E8"/>
+  <circle cx="47" cy="37" r="2.2" fill="#00A8E8"/>
+</svg>

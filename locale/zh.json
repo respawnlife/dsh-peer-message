@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "跨会话消息",
+    "description": "让一个会话给另一个会话发消息并把它叫醒（peer_list / peer_send）：A 派活给 B、B 干完主动回报 A，都能用。"
+  }
+}

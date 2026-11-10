@@ -1,0 +1,25 @@
+# 依赖
+node_modules/
+
+# 日志
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-error.log*
+
+# 环境变量 / 本地配置
+.env
+.env.*
+!.env.example
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# 构建与测试产物
+coverage/
+*.tgz
+dist/

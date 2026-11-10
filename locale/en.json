@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Peer messaging",
+    "description": "Cross-session messaging for DSH: deliver a message into another conversation and wake it up (peer_list / peer_send)."
+  }
+}
